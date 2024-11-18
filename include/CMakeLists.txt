@@ -1,0 +1,35 @@
+set(Battleship_LIB_INC
+    Ability.hpp
+    AbilityContainer.hpp
+    AbilityResult.hpp
+    Action.hpp
+    AttackOutOfBounds.hpp
+    BombardAbility.hpp
+    BotPlayer.hpp
+    ConsoleInputHandler.hpp
+    ConsoleOutputHandler.hpp
+    Coordinates.hpp
+    DoubleDamageAbility.hpp
+    Field.hpp
+    FieldObserver.hpp
+    FieldProvider.hpp
+    GameSession.hpp
+    HumanPlayer.hpp
+    InputHandler.hpp
+    NoAbilityAvailableException.hpp
+    Orientation.hpp
+    OutputHandler.hpp
+    Player.hpp
+    PlayerParameters.hpp
+    RandomGenerator.hpp
+    ScannerAbility.hpp
+    SegmentState.hpp
+    Ship.hpp
+    ShipContainer.hpp
+    ShipPlacementException.hpp
+    Tile.hpp
+    TileState.hpp
+)
+
+PREPEND(Battleship_LIB_INC)
+set(Battleship_LIB_INC ${Battleship_LIB_INC} PARENT_SCOPE)

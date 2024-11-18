@@ -1,0 +1,43 @@
+{
+    "players": [
+        {
+            "playerParameters": {
+                "damage": 1,
+                "isAbilityUsed": true
+            },
+            "shipContainer": {
+                "ships": [
+                    {
+                        "id": "uuid",
+                        "segments": [
+                            2,
+                            2,
+                            2
+                        ]
+                    }
+                ]
+            },
+            "field": {
+                "rows": 1,
+                "columns": 1,
+                "tiles": [
+                    {
+                        "tileState": 0,
+                        "shipId": null
+                    },
+                    {
+                        "tileState": 0,
+                        "shipId": "frikarecto"
+                    }
+                ]
+            },
+            "abilityContainer": {
+                "abilities": [
+                    "Name",
+                    "Name",
+                    "Name"
+                ]
+            }
+        }
+    ]
+}
