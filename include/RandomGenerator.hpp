@@ -11,6 +11,7 @@ public:
     RandomGenerator();
     std::mt19937 getGenerator();
     int randomBetween(int a, int b);
+    int64_t randomId();
 };
 
 #endif  // RANDOMGENERATOR_HPP

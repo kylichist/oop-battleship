@@ -1,8 +1,7 @@
 #include "../include/PlayerParameters.hpp"
 
 PlayerParameters::PlayerParameters() {
-    resetAttackParameters();
-    resetIsAbilityUsed();
+    resetAll();
 }
 
 uint8_t PlayerParameters::getDamage() {
@@ -27,4 +26,9 @@ void PlayerParameters::setIsAbilityUsed(bool isAbilityUsed) {
 
 void PlayerParameters::resetIsAbilityUsed() {
     isAbilityUsed = false;
+}
+
+void PlayerParameters::resetAll() {
+    resetIsAbilityUsed();
+    resetAttackParameters();
 }

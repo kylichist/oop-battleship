@@ -33,27 +33,40 @@ Ability* AbilityContainer::getRandomAbility() {
     return ability;
 }
 
-AbilityContainer::AbilityContainer(Player& player) : player(player) {
+Ability* AbilityContainer::getAbilityFromString(std::string string) {
+    if (string == "Bombard") {
+        return new BombardAbility();
+    }
+    if (string == "Scanner") {
+        return new ScannerAbility();
+    }
+    if (string == "Double Damage") {
+        return new DoubleDamageAbility();
+    }
+    return nullptr;
+}
+
+AbilityContainer::AbilityContainer() {
     std::vector<Ability*> shuffledAbilities = getShuffledAbilities();
 
     for (uint8_t i = 0; i < shuffledAbilities.size(); ++i) {
-        abilities.push(shuffledAbilities[i]);
+        abilities.push_back(shuffledAbilities[i]);
     }
 }
 
-AbilityResult* AbilityContainer::useAbility() {
+AbilityResult* AbilityContainer::useAbility(Player& player) {
     if (abilities.size() == 0) {
         throw NoAbilityAvailableException();
     }
 
     Ability* ability = abilities.front();
-    abilities.pop();
+    abilities.pop_front();
 
     uint8_t aliveShipsBefore = player.getShipContainer().getAliveShipsCount();
     AbilityResult* result = ability->use(player);
     uint8_t aliveShipsAfter = player.getShipContainer().getAliveShipsCount();
     if (aliveShipsAfter < aliveShipsBefore) {
-        abilities.push(getRandomAbility());
+        abilities.push_back(getRandomAbility());
     }
 
     delete ability;
@@ -65,14 +78,14 @@ uint8_t AbilityContainer::getAbilitiesCount() {
 }
 
 void AbilityContainer::onShipDestroyed() {
-    abilities.push(getRandomAbility());
+    abilities.push_back(getRandomAbility());
 }
 
 AbilityContainer::~AbilityContainer() {
     uint8_t abilitiesSize = abilities.size();
     for (uint8_t i = 0; i < abilitiesSize; ++i) {
         Ability* ability = abilities.front();
-        abilities.pop();
+        abilities.pop_front();
         delete ability;
     }
 }

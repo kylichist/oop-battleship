@@ -1,50 +1,87 @@
 #include <cstdint>
 #include <cstdlib>
+#include <fstream>
 #include <iomanip>
 #include <iostream>
+#include <jsoncpp/json/json.h>
 #include <map>
 #include <memory>
 
-#include "../include/BotPlayer.hpp"
-#include "../include/ConsoleInputHandler.hpp"
-#include "../include/ConsoleOutputHandler.hpp"
 #include "../include/Coordinates.hpp"
 #include "../include/Field.hpp"
 #include "../include/FieldProvider.hpp"
+#include "../include/GameInputController.hpp"
+#include "../include/GameOutputController.hpp"
 #include "../include/GameSession.hpp"
-#include "../include/HumanPlayer.hpp"
 #include "../include/RandomFieldProvider.hpp"
 #include "../include/RandomGenerator.hpp"
 #include "../include/Ship.hpp"
 #include "../include/ShipContainer.hpp"
 
+void newGame(GameSession& gameSession, GameInputController& input);
+bool gameCycle(GameSession& gameSession, GameInputController& input);
+
+void newGame(GameSession& gameSession, GameInputController& input) {
+    char control;
+    while (!gameSession.getInitialized()) {
+        std::cout << "New game (n) or load (l) ?" << std::endl;
+
+        std::cin >> control;
+
+        if (control == 'l') {
+            input.executeCommand(GameCommand::LOAD);
+        } else if (control == 'n') {
+            input.executeCommand(GameCommand::INITIALIZE_MANUAL);
+        } else {
+            std::cout << "Unknown key." << std::endl;
+        }
+    }
+}
+
+bool gameCycle(GameSession& gameSession, GameInputController& input) {
+    char control;
+    bool quit = false;
+    while (!quit && gameSession.getStarted()) {
+        std::cin >> control;
+        if (control == 'q') {
+            quit = true;
+        } else if (control == 'w') {
+            input.executeCommand(GameCommand::MOVE_UP);
+        } else if (control == 'a') {
+            input.executeCommand(GameCommand::MOVE_LEFT);
+        } else if (control == 's') {
+            input.executeCommand(GameCommand::MOVE_DOWN);
+        } else if (control == 'd') {
+            input.executeCommand(GameCommand::MOVE_RIGHT);
+        } else if (control == 'z') {
+            input.executeCommand(GameCommand::ATTACK);
+        } else if (control == 'x') {
+            input.executeCommand(GameCommand::USE_ABILITY);
+        } else if (control == 'p') {
+            input.executeCommand(GameCommand::SAVE);
+        } else if (control == 'o') {
+            input.executeCommand(GameCommand::LOAD);
+        }
+    }
+    return quit;
+}
+
 int main() {
-    // параметры тестовой игры
-    uint8_t rows = 10, columns = 10;
-    std::map<uint8_t, uint8_t> limits = {{4, 1}, {3, 2}, {2, 3}, {1, 4}};
+    GameSession gameSession = GameSession();
+    GameOutputController* output = new GameOutputController();
+    gameSession.addObserver(output);
+    GameInputController input = GameInputController(gameSession, *output);
 
-    // игровые сущности
-    Player* player1 =
-        new HumanPlayer(rows, columns, limits, new ConsoleInputHandler(),
-                        new ConsoleOutputHandler());
-    Player* player2 = new BotPlayer(rows, columns, limits);
-    // Player* player2 =
-    //     new HumanPlayer(rows, columns, limits, new ConsoleInputHandler(),
-    //                     new ConsoleOutputHandler());
+    std::cout << "w: Move up\na: Move left\ns: Move down\nd: Move right\nz: "
+                 "Attack\nx: Use ability\np: Save\no: Load\n";
 
-    FieldProvider* fieldProvider = new RandomFieldProvider();
-    fieldProvider->placeShips(player1->getField(), player1->getShipContainer());
-    fieldProvider->placeShips(player2->getField(), player2->getShipContainer());
-    delete fieldProvider;
+    bool quit = false;
+    while (!quit) {
+        newGame(gameSession, input);
+        gameSession.start();
+        quit = gameCycle(gameSession, input);
+    }
 
-    OutputHandler* keyWriter = new ConsoleOutputHandler();
-    keyWriter->printMessage("Key:");
-    keyWriter->printField(player2->getField(), false);
-    delete keyWriter;
-
-    GameSession gameSession = GameSession(player1, player2);
-
-    gameSession.start();
-
+    delete output;
     return 0;
 }

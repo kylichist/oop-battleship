@@ -12,9 +12,9 @@ Field::Field(uint8_t rows, uint8_t columns) : rows(rows), columns(columns) {
     observers = {};
     // заполнение двумерных векторов клеток значениями по умолчанию
     tiles = std::vector<std::vector<Tile>>();
-    for (uint8_t i = 0; i < rows; ++i) {
+    for (size_t i = 0; i < rows; ++i) {
         tiles.push_back(std::vector<Tile>());
-        for (uint8_t j = 0; j < columns; ++j) {
+        for (size_t j = 0; j < columns; ++j) {
             tiles[i].push_back(Tile());
         }
     }
@@ -183,7 +183,7 @@ bool Field::checkCoordinates(Coordinates coordinates) {
            coordinates.y >= 0 && coordinates.y < rows;
 }
 
-bool Field::checkCoordinates(uint8_t x, uint8_t y) {
+bool Field::checkCoordinates(int16_t x, int16_t y) {
     return checkCoordinates(Coordinates(x, y));
 }
 
@@ -204,6 +204,41 @@ void Field::shootAt(Coordinates coordinates, uint8_t damage) {
     if (tile.ship->isDestroyed()) {
         for (auto observer : observers) {
             observer->onShipDestroyed();
+        }
+
+        int16_t x = coordinates.x - 1, y = coordinates.y - 1;
+
+        bool left = checkCoordinates(coordinates.x - 1, coordinates.y) &&
+                    getTile(coordinates.x - 1, coordinates.y).ship != nullptr;
+        bool right = checkCoordinates(coordinates.x + 1, coordinates.y) &&
+                     getTile(coordinates.x + 1, coordinates.y).ship != nullptr;
+        bool horizontal = left || right;
+
+        while (checkCoordinates(x, coordinates.y) &&
+               getTile(x, coordinates.y).ship != nullptr) {
+            x -= 1;
+        }
+        while (checkCoordinates(coordinates.x, y) &&
+               getTile(coordinates.x, y).ship != nullptr) {
+            y -= 1;
+        }
+
+        int16_t xe = 0, ye = 0;
+        if (horizontal) {
+            xe = x + tile.ship->getLength() + 1;
+            ye = y + 2;
+        } else {
+            ye = y + tile.ship->getLength() + 1;
+            xe = x + 2;
+        }
+
+        for (int16_t sy = y; sy <= ye; ++sy) {
+            for (int16_t sx = x; sx <= xe; ++sx) {
+                Coordinates tc = Coordinates(sx, sy);
+                if (checkCoordinates(tc)) {
+                    setTileState(tc, TileState::SHOT);
+                }
+            }
         }
     }
 }

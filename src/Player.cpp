@@ -1,31 +1,41 @@
 #include "../include/Player.hpp"
 
-Player::Player(uint8_t fieldRows, uint8_t fieldColumns,
-               std::map<uint8_t, uint8_t> shipScheme)
-    : field(new Field(fieldRows, fieldColumns)),
-      shipContainer(new ShipContainer(shipScheme)),
-      playerParameters(new PlayerParameters()),
-      abilityContainer(new AbilityContainer(*this)) {
+Player::Player(Field* field, ShipContainer* shipContainer,
+               AbilityContainer* abilityContainer,
+               PlayerParameters* playerParameters)
+    : field(field),
+      shipContainer(shipContainer),
+      playerParameters(playerParameters),
+      abilityContainer(abilityContainer) {
     selectedCoodrinates = Coordinates();
 }
 
-void Player::resetSelectedCoordinates() {
-    selectedCoodrinates.x = 0;
-    selectedCoodrinates.y = 0;
-}
-
 Player::~Player() {
-    delete field;
-    delete shipContainer;
-    delete abilityContainer;
-    delete playerParameters;
+    if (field != nullptr) {
+        delete field;
+    }
+    if (shipContainer != nullptr) {
+        delete shipContainer;
+    }
+    if (abilityContainer != nullptr) {
+        delete abilityContainer;
+    }
+    if (playerParameters != nullptr) {
+        delete playerParameters;
+    }
 }
 
 Field& Player::getField() {
+    if (field == nullptr) {
+        throw std::runtime_error("Trying to access null Field.");
+    }
     return *field;
 }
 
 ShipContainer& Player::getShipContainer() {
+    if (shipContainer == nullptr) {
+        throw std::runtime_error("Trying to access null ShipContainer.");
+    }
     return *shipContainer;
 }
 
@@ -34,22 +44,33 @@ Coordinates& Player::getSelectedCoordinates() {
 }
 
 PlayerParameters& Player::getPlayerParameters() {
+    if (playerParameters == nullptr) {
+        throw std::runtime_error("Trying to access null PlayerParameters.");
+    }
     return *playerParameters;
 }
 
 Player& Player::getEnemy() {
+    if (enemy == nullptr) {
+        throw std::runtime_error("Trying to access null Player(enemy).");
+    }
     return *enemy;
 }
 
 AbilityContainer& Player::getAbilityContainer() {
+    if (abilityContainer == nullptr) {
+        throw std::runtime_error("Trying to access null AbilityContainer.");
+    }
     return *abilityContainer;
 }
 
 void Player::setEnemy(Player* enemy) {
-    this->enemy = enemy;
-    enemy->getField().addObserver(abilityContainer);
-}
+    if (enemy == nullptr) {
+        throw std::runtime_error("Trying to set null Player(enemy).");
+    }
 
-void Player::resetIsAbilityUsed() {
-    playerParameters->resetIsAbilityUsed();
+    this->enemy = enemy;
+    if (abilityContainer != nullptr) {
+        enemy->getField().addObserver(abilityContainer);
+    }
 }

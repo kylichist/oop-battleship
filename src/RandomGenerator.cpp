@@ -13,3 +13,9 @@ int RandomGenerator::randomBetween(int a, int b) {
     std::uniform_int_distribution<> distribution(a, b);
     return distribution(generator);
 }
+
+int64_t RandomGenerator::randomId() {
+    std::uniform_int_distribution<long long> distribution(
+        0, std::numeric_limits<std::int64_t>::max());
+    return distribution(generator);
+}

@@ -1,43 +1,47 @@
 {
-    "players": [
-        {
-            "playerParameters": {
-                "damage": 1,
-                "isAbilityUsed": true
-            },
-            "shipContainer": {
-                "ships": [
-                    {
-                        "id": "uuid",
-                        "segments": [
-                            2,
-                            2,
-                            2
-                        ]
-                    }
-                ]
-            },
-            "field": {
-                "rows": 1,
-                "columns": 1,
-                "tiles": [
-                    {
-                        "tileState": 0,
-                        "shipId": null
-                    },
-                    {
-                        "tileState": 0,
-                        "shipId": "frikarecto"
-                    }
-                ]
-            },
-            "abilityContainer": {
-                "abilities": [
-                    "Name",
-                    "Name",
-                    "Name"
-                ]
+    "hash": 13092281342838870446,
+    "version": 1,
+    "game": {
+        "players": [
+            {
+                "playerParameters": {
+                    "damage": 1,
+                    "isAbilityUsed": true
+                },
+                "shipContainer": {
+                    "ships": [
+                        {
+                            "id": 123,
+                            "segments": [
+                                2,
+                                2,
+                                2
+                            ]
+                        }
+                    ]
+                },
+                "field": {
+                    "rows": 1,
+                    "columns": 1,
+                    "tiles": [
+                        {
+                            "tileState": 0,
+                            "shipId": null
+                        },
+                        {
+                            "tileState": 0,
+                            "shipId": 123
+                        }
+                    ]
+                },
+                "abilityContainer": {
+                    "abilities": [
+                        "Name",
+                        "Name",
+                        "Name"
+                    ]
+                }
             }
-        }
-    ]
+        ]
+    }
 }

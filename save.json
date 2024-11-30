@@ -1,0 +1,1016 @@
+{
+	"game" : 
+	{
+		"players" : 
+		[
+			{
+				"abilityContainer" : 
+				{
+					"abilities" : []
+				},
+				"field" : 
+				{
+					"columns" : 10,
+					"rows" : 10,
+					"tiles" : 
+					[
+						{
+							"shipId" : 4990249118726112102,
+							"tileState" : 0
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : 6437819612534789960,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 0
+						},
+						{
+							"shipId" : null,
+							"tileState" : 0
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 0
+						},
+						{
+							"shipId" : 4990249118726112102,
+							"tileState" : 0
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : 9170960091805263374,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 0
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 0
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : 4610923425706058910,
+							"tileState" : 1
+						},
+						{
+							"shipId" : 4610923425706058910,
+							"tileState" : 1
+						},
+						{
+							"shipId" : 4610923425706058910,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 0
+						},
+						{
+							"shipId" : null,
+							"tileState" : 0
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : 5886103038858099102,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 0
+						},
+						{
+							"shipId" : 7578302221708582887,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : 1159772421634763974,
+							"tileState" : 0
+						},
+						{
+							"shipId" : 1159772421634763974,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 0
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : 7578302221708582887,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 0
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : 6159678824730874850,
+							"tileState" : 1
+						},
+						{
+							"shipId" : 6159678824730874850,
+							"tileState" : 1
+						},
+						{
+							"shipId" : 6159678824730874850,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 0
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : 5374310170658998078,
+							"tileState" : 1
+						},
+						{
+							"shipId" : 5374310170658998078,
+							"tileState" : 1
+						},
+						{
+							"shipId" : 5374310170658998078,
+							"tileState" : 1
+						},
+						{
+							"shipId" : 5374310170658998078,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : 9156743994260984615,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						}
+					]
+				},
+				"playerParameters" : 
+				{
+					"damage" : 2,
+					"isAbilityUsed" : true
+				},
+				"shipContainer" : 
+				{
+					"ships" : 
+					[
+						{
+							"id" : 9170960091805263374,
+							"segments" : 
+							[
+								2
+							]
+						},
+						{
+							"id" : 6437819612534789960,
+							"segments" : 
+							[
+								2
+							]
+						},
+						{
+							"id" : 5886103038858099102,
+							"segments" : 
+							[
+								2
+							]
+						},
+						{
+							"id" : 9156743994260984615,
+							"segments" : 
+							[
+								2
+							]
+						},
+						{
+							"id" : 4990249118726112102,
+							"segments" : 
+							[
+								1,
+								1
+							]
+						},
+						{
+							"id" : 1159772421634763974,
+							"segments" : 
+							[
+								1,
+								2
+							]
+						},
+						{
+							"id" : 7578302221708582887,
+							"segments" : 
+							[
+								2,
+								2
+							]
+						},
+						{
+							"id" : 4610923425706058910,
+							"segments" : 
+							[
+								2,
+								2,
+								2
+							]
+						},
+						{
+							"id" : 6159678824730874850,
+							"segments" : 
+							[
+								2,
+								2,
+								2
+							]
+						},
+						{
+							"id" : 5374310170658998078,
+							"segments" : 
+							[
+								2,
+								2,
+								2,
+								2
+							]
+						}
+					]
+				}
+			},
+			{
+				"field" : 
+				{
+					"columns" : 10,
+					"rows" : 10,
+					"tiles" : 
+					[
+						{
+							"shipId" : null,
+							"tileState" : 0
+						},
+						{
+							"shipId" : null,
+							"tileState" : 0
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 0
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : 8538125045881562719,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 0
+						},
+						{
+							"shipId" : null,
+							"tileState" : 0
+						},
+						{
+							"shipId" : null,
+							"tileState" : 0
+						},
+						{
+							"shipId" : 3500432348152355510,
+							"tileState" : 1
+						},
+						{
+							"shipId" : 3500432348152355510,
+							"tileState" : 1
+						},
+						{
+							"shipId" : 3500432348152355510,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 0
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 0
+						},
+						{
+							"shipId" : 9127461669700120398,
+							"tileState" : 0
+						},
+						{
+							"shipId" : null,
+							"tileState" : 0
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 0
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 0
+						},
+						{
+							"shipId" : 9127461669700120398,
+							"tileState" : 0
+						},
+						{
+							"shipId" : null,
+							"tileState" : 0
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : 1211048461612518063,
+							"tileState" : 1
+						},
+						{
+							"shipId" : 1211048461612518063,
+							"tileState" : 1
+						},
+						{
+							"shipId" : 1211048461612518063,
+							"tileState" : 1
+						},
+						{
+							"shipId" : 1211048461612518063,
+							"tileState" : 0
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 0
+						},
+						{
+							"shipId" : null,
+							"tileState" : 0
+						},
+						{
+							"shipId" : null,
+							"tileState" : 0
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 0
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : 6032437695555642403,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : 4781195644961957420,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : 2263666856011236731,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : 6032437695555642403,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : 3352627453820043297,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : 2263666856011236731,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : 160575979927328439,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : 3702885008668656921,
+							"tileState" : 1
+						},
+						{
+							"shipId" : 3702885008668656921,
+							"tileState" : 1
+						},
+						{
+							"shipId" : 3702885008668656921,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						},
+						{
+							"shipId" : null,
+							"tileState" : 1
+						}
+					]
+				},
+				"playerParameters" : 
+				{
+					"damage" : 1,
+					"isAbilityUsed" : false
+				},
+				"shipContainer" : 
+				{
+					"ships" : 
+					[
+						{
+							"id" : 3352627453820043297,
+							"segments" : 
+							[
+								2
+							]
+						},
+						{
+							"id" : 4781195644961957420,
+							"segments" : 
+							[
+								2
+							]
+						},
+						{
+							"id" : 160575979927328439,
+							"segments" : 
+							[
+								2
+							]
+						},
+						{
+							"id" : 8538125045881562719,
+							"segments" : 
+							[
+								2
+							]
+						},
+						{
+							"id" : 6032437695555642403,
+							"segments" : 
+							[
+								2,
+								2
+							]
+						},
+						{
+							"id" : 9127461669700120398,
+							"segments" : 
+							[
+								0,
+								0
+							]
+						},
+						{
+							"id" : 2263666856011236731,
+							"segments" : 
+							[
+								2,
+								2
+							]
+						},
+						{
+							"id" : 3702885008668656921,
+							"segments" : 
+							[
+								2,
+								1,
+								2
+							]
+						},
+						{
+							"id" : 3500432348152355510,
+							"segments" : 
+							[
+								2,
+								2,
+								2
+							]
+						},
+						{
+							"id" : 1211048461612518063,
+							"segments" : 
+							[
+								2,
+								2,
+								2,
+								1
+							]
+						}
+					]
+				}
+			}
+		]
+	},
+	"hash" : 14552603256523328169,
+	"version" : 1
+}

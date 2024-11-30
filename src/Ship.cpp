@@ -1,5 +1,6 @@
 #include <stdexcept>
 
+#include "../include/RandomGenerator.hpp"
 #include "../include/Ship.hpp"
 
 Ship::Ship(uint8_t length) {
@@ -10,10 +11,15 @@ Ship::Ship(uint8_t length) {
     for (uint8_t i = 0; i < length; ++i) {
         segments.push_back(2);
     }
+    this->id = RandomGenerator().randomId();
 }
 
 uint8_t Ship::getLength() {
     return segments.size();
+}
+
+int64_t Ship::getId() {
+    return id;
 }
 
 SegmentState Ship::getSegment(uint8_t segmentIndex) {

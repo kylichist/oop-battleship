@@ -4,6 +4,9 @@
 #include "Field.hpp"
 #include "ShipContainer.hpp"
 
+class Field;
+class ShipContainer;
+
 class FieldProvider {
 public:
     virtual void placeShips(Field& field, ShipContainer& shipContainer) = 0;

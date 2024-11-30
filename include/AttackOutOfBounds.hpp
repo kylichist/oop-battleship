@@ -7,11 +7,11 @@
 
 class AttackOutOfBounds : public std::runtime_error {
 private:
-    uint8_t x;
-    uint8_t y;
+    int16_t x;
+    int16_t y;
 
 public:
-    AttackOutOfBounds(uint8_t x, uint8_t y)
+    AttackOutOfBounds(int16_t x, int16_t y)
         : runtime_error("Attack out of bounds at x: " + std::to_string(x) +
                         ", y: " + std::to_string(y)),
           x(x),

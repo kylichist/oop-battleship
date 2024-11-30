@@ -1,0 +1,16 @@
+#ifndef GAMECOMMAND_HPP  // GAMECOMMAND_HPP
+#define GAMECOMMAND_HPP
+
+enum class GameCommand {
+    MOVE_LEFT,
+    MOVE_RIGHT,
+    MOVE_UP,
+    MOVE_DOWN,
+    ATTACK,
+    USE_ABILITY,
+    LOAD,
+    SAVE,
+    INITIALIZE_MANUAL
+};
+
+#endif  // GAMECOMMAND_HPP
