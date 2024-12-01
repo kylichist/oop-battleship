@@ -30,8 +30,8 @@ void GameInputController::executeCommand(GameCommand gameCommand) {
     }
     if (gameCommand == GameCommand::LOAD) {
         try {
-            FileReader reader = FileReader();
-            reader.readGameState("save.json", gameSession.getGameState());
+            FileReader reader = FileReader("save.json");
+            reader.readGameState(gameSession.getGameState());
             output.printMessage("Savefile loaded.");
         } catch (std::runtime_error e) {
             output.printMessage(e.what());
@@ -41,8 +41,8 @@ void GameInputController::executeCommand(GameCommand gameCommand) {
 
     if (gameCommand == GameCommand::SAVE) {
         try {
-            FileWriter writer = FileWriter();
-            writer.writeGameState("save.json", gameSession.getGameState());
+            FileWriter writer = FileWriter("save.json");
+            writer.writeGameState(gameSession.getGameState());
             output.printMessage("Savefile written.");
         } catch (std::exception e) {
             output.printMessage(e.what());

@@ -8,7 +8,12 @@
 #include "GameState.hpp"
 
 class FileWriter {
+private:
+    std::FILE* file;
+
 public:
-    void writeGameState(std::string path, GameState& gameState);
+    FileWriter(std::string path);
+    void writeGameState(GameState& gameState);
+    ~FileWriter();
 };
 #endif  // FILEWRITER_HPP

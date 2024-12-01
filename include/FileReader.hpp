@@ -8,7 +8,12 @@
 #include "GameState.hpp"
 
 class FileReader {
+private:
+    std::FILE* file;
+
 public:
-    void readGameState(std::string path, GameState& gameState);
+    FileReader(std::string path);
+    void readGameState(GameState& gameState);
+    ~FileReader();
 };
 #endif  // FILEREADER_HPP
