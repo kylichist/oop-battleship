@@ -7,6 +7,7 @@ ShipContainer::ShipContainer(std::map<uint8_t, uint8_t> limits) {
     this->ships = std::vector<Ship*>();
     this->limits = limits;
     for (auto pair : limits) {
+        // (length, count)
         for (uint8_t count = 0; count < pair.second; ++count) {
             ships.push_back(new Ship(pair.first));
         }

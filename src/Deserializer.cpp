@@ -95,7 +95,7 @@ void Deserializer::deserializeGameState(Json::Value object,
     if (!object.isMember("version")) {
         throw std::runtime_error("Corrupted savefile: no version found.");
     }
-    if (object["version"].asInt64() != CURRENT_SCHEMA_VERSION) {
+    if (object["version"].asInt64() != SAVEFILE_VERSION) {
         throw std::runtime_error("Corrupted savefile: version mismatch.");
     }
     if (!object.isMember("hash")) {
@@ -145,4 +145,46 @@ void Deserializer::deserializeGameState(Json::Value object,
         new Player(botField, botShipContainer, nullptr, botPlayerParameters);
     gameState.user->setEnemy(gameState.bot);
     gameState.bot->setEnemy(gameState.user);
+}
+
+ControlConfiguration Deserializer::deserializeControlConfiguration(
+    Json::Value object) {
+    try {
+        object.isMember("");
+    } catch (Json::RuntimeError e) {
+        throw std::runtime_error("Corrupted config file: malformed json.");
+    } catch (Json::LogicError e) {
+        throw std::runtime_error("Corrupted config file: malformed json.");
+    }
+    if (!object.isMember("version")) {
+        throw std::runtime_error("Corrupted config file: no version found.");
+    }
+    if (object["version"].asInt64() != SAVEFILE_VERSION) {
+        throw std::runtime_error("Corrupted config file: version mismatch.");
+    }
+    if (!object.isMember("config")) {
+        throw std::runtime_error(
+            "Corrupted config file: no config data found.");
+    }
+    ControlConfiguration config = ControlConfiguration();
+    Json::Value configObject = object["config"];
+
+    for (auto command : configObject.getMemberNames()) {
+        int commandInt = std::stoi(command);
+        if (commandInt < 0 || commandInt >= COMMANDS_COUNT) {
+            throw std::runtime_error(
+                "Corrupted config file: incorrect command.");
+        }
+        std::string key = configObject[command].asString();
+        if (key.size() != 1) {
+            throw std::runtime_error("Corrupted config file: incorrect key.");
+        }
+        config[key[0]] = static_cast<GameCommand>(commandInt);
+    }
+
+    if (config.size() != COMMANDS_COUNT) {
+        throw std::runtime_error("Corrupted config file: missing commands.");
+    }
+
+    return config;
 }

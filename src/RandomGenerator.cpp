@@ -10,6 +10,14 @@ std::mt19937 RandomGenerator::getGenerator() {
 }
 
 int RandomGenerator::randomBetween(int a, int b) {
+    if (a == b) {
+        return a;
+    }
+    if (a > b) {
+        int t = a;
+        a = b;
+        b = t;
+    }
     std::uniform_int_distribution<> distribution(a, b);
     return distribution(generator);
 }

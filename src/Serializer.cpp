@@ -86,7 +86,7 @@ Json::Value Serializer::serializeGameState(GameState* gameState) {
 
     Json::Value object = Json::Value();
     object["hash"] = hash;
-    object["version"] = CURRENT_SCHEMA_VERSION;
+    object["version"] = SAVEFILE_VERSION;
     object["game"] = game;
     return object;
 }

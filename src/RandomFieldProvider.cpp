@@ -2,6 +2,8 @@
 
 #include "../include/RandomFieldProvider.hpp"
 
+#define TRY_LIMIT 1000
+
 RandomFieldProvider::RandomFieldProvider() {
     randomGenerator = RandomGenerator();
 }
@@ -12,7 +14,12 @@ void RandomFieldProvider::placeShips(Field& field,
     for (int16_t i = shipCount - 1; i >= 0; --i) {
         Ship& ship = shipContainer.getShip(i);
         bool placed = false;
+        int tries = 0;
         while (!placed) {
+            tries += 1;
+            if (tries >= TRY_LIMIT) {
+                throw std::runtime_error("Could not place ships randomly.");
+            }
             Orientation orientation =
                 static_cast<Orientation>(randomGenerator.randomBetween(0, 1));
             uint8_t randomX = randomGenerator.randomBetween(

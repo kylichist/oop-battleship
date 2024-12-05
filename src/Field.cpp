@@ -135,6 +135,12 @@ void Field::setShip(Coordinates coordinates, Ship* ship,
         throw std::runtime_error("Ship is null");
     }
     bool isHorizontal = orientation == Orientation::HORIZONTAL;
+    if (isHorizontal && ship->getLength() > columns) {
+        throw std::runtime_error("Field is less than ship.");
+    }
+    if (!isHorizontal && ship->getLength() > rows) {
+        throw std::runtime_error("Field is less than ship.");
+    }
     int16_t shipHeadX = coordinates.x, shipHeadY = coordinates.y;
     int16_t shipTailX =
         isHorizontal ? shipHeadX + ship->getLength() - 1 : shipHeadX;

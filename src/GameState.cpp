@@ -96,9 +96,16 @@ void GameState::load(uint8_t fieldRows, uint8_t fieldColumns,
 
     Field* userField = new Field(fieldRows, fieldColumns);
     ShipContainer* userShipContainer = new ShipContainer(shipLimits);
+    try {
+        userFieldProvider->placeShips(*userField, *userShipContainer);
+    } catch (std::runtime_error e) {
+        delete userField;
+        delete userShipContainer;
+        throw e;
+    }
     AbilityContainer* userAbilityContainer = new AbilityContainer();
     PlayerParameters* userPlayerParameters = new PlayerParameters();
-    userFieldProvider->placeShips(*userField, *userShipContainer);
+
     user = new Player(userField, userShipContainer, userAbilityContainer,
                       userPlayerParameters);
 

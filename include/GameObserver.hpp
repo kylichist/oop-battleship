@@ -12,6 +12,8 @@ public:
     virtual void onBotTurn() = 0;
     virtual void onBotWin() = 0;
     virtual void onUserWin() = 0;
+
+    virtual ~GameObserver() {}
 };
 
 #endif  // GAMEOBSERVER_HPP

@@ -5,10 +5,10 @@
 
 AbilityResult* BombardAbility::use(Player& player) {
     ShipContainer& shipContainer = player.getEnemy().getShipContainer();
-    std::vector<uint8_t> remainingShips = {};
-    for (uint8_t i = 0; i < shipContainer.getShipsCount(); ++i) {
-        Ship& ship = shipContainer.getShip(i);
-        if (!ship.isDestroyed()) {
+    std::vector<size_t> remainingShips = {};
+    for (size_t i = 0; i < shipContainer.getShipsCount(); ++i) {
+        Ship& testShip = shipContainer.getShip(i);
+        if (!testShip.isDestroyed()) {
             remainingShips.push_back(i);
         }
     }
@@ -19,14 +19,17 @@ AbilityResult* BombardAbility::use(Player& player) {
     RandomGenerator randomGenerator = RandomGenerator();
     uint8_t randomShipIndex =
         randomGenerator.randomBetween(0, remainingShips.size() - 1);
-
-    Ship& ship = shipContainer.getShip(randomShipIndex);
+    Ship& ship = shipContainer.getShip(remainingShips[randomShipIndex]);
     std::vector<uint8_t> remainingSegments = {};
 
     for (uint8_t j = 0; j < ship.getLength(); ++j) {
         if (ship.getSegment(j) != SegmentState::DESTROYED) {
             remainingSegments.push_back(j);
         }
+    }
+
+    if (remainingSegments.size() == 0) {
+        return new BombardFailureResult();
     }
 
     uint8_t randomSegmentIndex =

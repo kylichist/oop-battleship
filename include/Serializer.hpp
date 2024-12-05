@@ -11,7 +11,7 @@
 #include "ShipContainer.hpp"
 #include "Tile.hpp"
 
-#define CURRENT_SCHEMA_VERSION 1
+#define SAVEFILE_VERSION 1
 
 class Ship;
 class ShipContainer;

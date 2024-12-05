@@ -1,9 +1,10 @@
 #include <cmath>
 #include <iomanip>
+#include <iostream>
 
-#include "../include/GameOutputController.hpp"
+#include "../include/ConsoleOutput.hpp"
 
-void GameOutputController::printField(Field& field, bool isEnemy) {
+void ConsoleOutput::printField(Field& field, bool isEnemy) {
     uint8_t rowsWidth = int(std::log10(field.getRows()) + 1);
     uint8_t columnsWidth = int(std::log10(field.getColumns()) + 1);
 
@@ -37,39 +38,14 @@ void GameOutputController::printField(Field& field, bool isEnemy) {
     }
 }
 
-void GameOutputController::onActionDenied() {
-    std::cout << "Action usage denied" << std::endl;
-}
-
-void GameOutputController::onActionResult(ActionResult* result) {
-    std::cout << result->getResult() << std::endl;
-}
-
-void GameOutputController::onUserTurn(GameState& gameState) {
-    Player& user = gameState.getUser();
-    std::cout << "Your turn." << std::endl;
-    std::cout << "Your field:" << std::endl;
-    printField(user.getField());
-    std::cout << "Enemy field:" << std::endl;
-    printField(user.getEnemy().getField(), true);
-    if (user.getAbilityContainer().getAbilitiesCount() != 0) {
-        std::cout << "Available ability: " << user.getAbilityContainer().peek()
-                  << std::endl;
-    }
-}
-
-void GameOutputController::onBotTurn() {
-    std::cout << "Bot turn." << std::endl;
-}
-
-void GameOutputController::onBotWin() {
-    std::cout << "Bot won. Game finished." << std::endl;
-}
-
-void GameOutputController::onUserWin() {
-    std::cout << "You won. Next round." << std::endl;
-}
-
-void GameOutputController::printMessage(std::string message) {
+void ConsoleOutput::printMessage(std::string message) {
     std::cout << message << std::endl;
+}
+
+void ConsoleOutput::printError(std::runtime_error error) {
+    std::cout << error.what() << std::endl;
+}
+
+void ConsoleOutput::printError(std::exception error) {
+    std::cout << error.what() << std::endl;
 }
